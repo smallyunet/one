@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>大学毕业是什么体验 - 失败朋克的一辈子</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="一个区块链程序员的自我救赎之路">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">失败朋克的一辈子</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="大学毕业是什么体验"><a class="header" href="#大学毕业是什么体验">大学毕业是什么体验</a></h1>
+<p>2019-06-30</p>
+<p>李诞写的一本书《笑场》的序言里有一句话：“人生确实没有意义，但人生有美”。</p>
+<h3 id="相同的错误"><a class="header" href="#相同的错误">相同的错误</a></h3>
+<p>其实我早就“毕业”了，只是现在才领证书。当我没有挂科记录的时候，当我开始实习的时候，我的学生时代就已经结束了，虽然好像不曾开始过。学业上，可能唯一的遗憾是英语四级（CET 4）没过。也许你会觉得可笑，我也感觉可笑。临近毕业，学校有一个大学四年的综测成绩，我期末考试从没考过第一，但四年下来的综测竟然可以在班里排第一。当然，我们班成绩整体很差，但这不重要，重要的是将近1/2的人可以考过425，我却只有423。</p>
+<p>大学刚入学的几天，我曾在笔记本上写过几天日记，整理东西的时候翻开，其中有一句话让我感到吃惊：“我是来学习的，不是来娱乐的”。我自然可以理解当时是什么心情，高三的一年时间里，只有我自己知道我做了什么。高三开学摸底考，我考班里倒数十几，直到后来各种模拟考高考，我可以保持班里前三。不要对这样的排名感到诧异，这就是小县城的真实情况。也正因为这样的经历，我怀着不那么正规的求学的心，开始了大学生活。</p>
+<p>就在前段时间，我陷入了同样的思维困境：“我不是来娱乐的，我是来工作的”。因为没有带着游玩的心上大学，所以大学的时光里，我的成绩可能不那么差，技术能力也有所增长，总体而言，是远超部分同学的。但也正因如此，我错过了很多娱乐的机会，甚至我大学所在的城市，都完全不了解，景点、场所等。更重要的是，我错过了非常重要的人，错过了曾经弥足珍贵的机会。现在我已经学会如何爱一个人，可是没有人再需要我去爱了。</p>
+<p>所以你可以理解标题“相同的错误”是指什么。我从半个月前开始规划要写的内容，原标题是“关于职业生涯的规划”，后来觉得职业生涯这个范围太小了，无非是认真工作、好好生活、工作和生活平衡。事实上生活本就不需要规划，规划了也没用，我们应该时刻保持清醒，现状如何，未来会怎样，想要的是什么。总的来说，该有的想法是：“我不是来混日子的”。</p>
+<h3 id="一拳超人"><a class="header" href="#一拳超人">一拳超人</a></h3>
+<p>我换了个头像。他说，“我变秃了，也变强了”。琦玉因为感兴趣而当英雄，不是为了被更多人认识和崇拜，也不是为了英雄协会的丰厚待遇，仅仅是因为想当英雄所以当了英雄。可以说，我从事某个职业，也不是为了别人眼中的各种评价标准，仅仅是因为我从初中就开始积累的某些兴趣，让我想要在这条路上继续探索前行。</p>
+<p>琦玉的强大是莫名其妙的，即使他把变强的过程全盘托出，你也无法达到他的高度。就好比学霸告诉你他上课如何听讲，作业如何完成，你也无法成为下一个学霸。一拳超人变强大唯一的代价，就是头发变秃了，直接变成了光头。我发现这一点和程序员类似，如果一个程序员因为工作把头发搞秃了，那他往往是大牛，并且即使他把方法告诉你，你也无法轻易超越。不过即便如此，也并不应该阻碍我们对强大能力的向往。</p>
+<img src="./大学毕业是什么体验/avatar_origin.jpg" width="50%" height="50%">
+<h3 id="毕设和微服务"><a class="header" href="#毕设和微服务">毕设和微服务</a></h3>
+<p>我的毕设以微服务为标题，但由于我们学校对毕设和论文的要求之低，我并没能完成自己心里的目标，只是应付老师，蒙混过关了。微服务本身是一个很简单的概念，难点往往在于如何在大型系统中实现微服务。在大型系统中进行任何操作都步履维艰，微服务并不特殊，因此，微服务是简单的。关于注册中心、配置中心、负载均衡、断路器什么的，可能在不久的将来，这个博客上就会出现关于它们的文章。</p>
+<p>学习应该关注本质，是抽象的，我更希望从高的层面去理解技术，如果只是学习Kafka怎么使用而不关心像Kafka这样的中间件都在解决什么问题，这个世界就太无聊了。结合实际工作的内容，我的下一步计划会聚焦在中间件、区块链和算法上。</p>
+<h3 id="博客存在的意义"><a class="header" href="#博客存在的意义">博客存在的意义</a></h3>
+<p>（写到这里，发现自己没有耐心继续写下去。有些内容的输出需要同理心，也就是“当时是什么想的”。这半个月来发生了很多事情，但是现在已经结束了，并且我将面临新的生活和挑战。我的心态回不到过去，也不愿停留在过去。可能剩下的内容将无法完成。）</p>
+<p>（这个附件 <a href="./%E5%A4%A7%E5%AD%A6%E6%AF%95%E4%B8%9A%E6%98%AF%E4%BB%80%E4%B9%88%E4%BD%93%E9%AA%8C/%E5%85%B3%E4%BA%8E%E8%81%8C%E4%B8%9A%E7%94%9F%E6%B6%AF%E7%9A%84%E8%A7%84%E5%88%92.pdf">关于职业生涯的规划</a> 是之前写的大纲。）</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../碎碎念/我为什么想要行万里路.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../碎碎念/宜怀旧-近期微博内容归档.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../碎碎念/我为什么想要行万里路.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../碎碎念/宜怀旧-近期微博内容归档.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
