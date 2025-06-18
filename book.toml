@@ -1,0 +1,9 @@
+[book]
+authors = ["smallyunet"]
+language = "zh"
+src = "src"
+title = "失败朋克的一辈子"
+description="一个区块链程序员的自我救赎之路"
+
+[build]
+build-dir = "docs"
